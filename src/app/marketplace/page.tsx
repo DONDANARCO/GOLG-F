@@ -344,7 +344,7 @@ export default function MarketplacePage() {
             <div key={product.id} className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
               <div className="relative">
                 <img
-                  src={product.image}
+                  src={'isSellerListing' in product && product.isSellerListing ? product.image : product.images[0]}
                   alt={product.name}
                   className="w-full h-48 object-cover"
                 />

@@ -135,7 +135,7 @@ export default function AdminProducts() {
                         <div className="h-10 w-10 flex-shrink-0">
                           <img
                             className="h-10 w-10 rounded-lg object-cover"
-                            src={product.image}
+                            src={product.images[0]}
                             alt={product.name}
                           />
                         </div>

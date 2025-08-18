@@ -7,8 +7,28 @@ import ProductGrid from '@/components/ProductGrid'
 import { products, categories, brands } from '@/data/products'
 import { Product } from '@/types'
 
+// Define a type for seller listings
+interface SellerListing {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  originalPrice: number;
+  category: string;
+  brand: string;
+  condition: string;
+  seller: string;
+  location: string;
+  rating: number;
+  inStock: boolean;
+  featured: boolean;
+  image: string;
+  isSellerListing: true;
+  commission: number;
+}
+
 // Mock seller listings - in a real app this would come from an API
-const sellerListings = [
+const sellerListings: SellerListing[] = [
   {
     id: 'seller-1',
     name: 'TaylorMade SIM2 Driver',
@@ -68,7 +88,7 @@ const sellerListings = [
 export default function MarketplacePage() {
   const searchParams = useSearchParams()
   const router = useRouter()
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
+  const [filteredProducts, setFilteredProducts] = useState<(Product | SellerListing)[]>([])
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [sortBy, setSortBy] = useState('name')
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
@@ -120,12 +140,26 @@ export default function MarketplacePage() {
 
     // Apply sorting
     filtered.sort((a, b) => {
-      let aValue: any = a[sortBy as keyof Product]
-      let bValue: any = b[sortBy as keyof Product]
+      let aValue: any
+      let bValue: any
 
+      // Handle sorting for common properties
       if (sortBy === 'price') {
         aValue = a.price
         bValue = b.price
+      } else if (sortBy === 'name') {
+        aValue = a.name
+        bValue = b.name
+      } else if (sortBy === 'brand') {
+        aValue = a.brand
+        bValue = b.brand
+      } else if (sortBy === 'rating') {
+        aValue = a.rating
+        bValue = b.rating
+      } else {
+        // For other properties, try to access them safely
+        aValue = (a as any)[sortBy]
+        bValue = (b as any)[sortBy]
       }
 
       if (typeof aValue === 'string') {
@@ -161,14 +195,14 @@ export default function MarketplacePage() {
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
   }
 
-  const getSourceIcon = (product: Product) => {
+  const getSourceIcon = (product: Product | SellerListing) => {
     if ('isSellerListing' in product && product.isSellerListing) {
       return <User className="w-4 h-4 text-green-600" />
     }
     return <Store className="w-4 h-4 text-blue-600" />
   }
 
-  const getSourceLabel = (product: Product) => {
+  const getSourceLabel = (product: Product | SellerListing) => {
     if ('isSellerListing' in product && product.isSellerListing) {
       return 'Seller'
     }

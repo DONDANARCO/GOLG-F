@@ -1,20 +1,21 @@
-import React from 'react';
-import { Star, ShoppingCart, Eye } from 'lucide-react';
-import { Product } from '../types';
-import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+'use client'
+
+import { Star, ShoppingCart, Eye } from 'lucide-react'
+import { Product } from '@/types'
+import { useCart } from '@/context/CartContext'
+import Link from 'next/link'
 
 interface ProductCardProps {
-  product: Product;
+  product: Product
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { addItem, getItemQuantity } = useCart();
-  const quantityInCart = getItemQuantity(product.id);
+const ProductCard = ({ product }: ProductCardProps) => {
+  const { addItem, getItemQuantity } = useCart()
+  const quantityInCart = getItemQuantity(product.id)
 
   const handleAddToCart = () => {
-    addItem(product);
-  };
+    addItem(product)
+  }
 
   return (
     <div className="card group hover:shadow-lg transition-shadow duration-300">
@@ -28,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         
         {/* Quick View Button */}
         <Link
-          to={`/product/${product.id}`}
+          href={`/product/${product.id}`}
           className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-white"
         >
           <Eye className="w-4 h-4 text-gray-600" />
@@ -60,7 +61,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
 
         {/* Product Name */}
-        <Link to={`/product/${product.id}`} className="block">
+        <Link href={`/product/${product.id}`} className="block">
           <h3 className="font-semibold text-gray-900 mb-2 hover:text-primary-600 transition-colors line-clamp-2">
             {product.name}
           </h3>
@@ -120,7 +121,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductCard; 
+export default ProductCard 

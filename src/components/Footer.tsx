@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import Link from 'next/link'
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -37,22 +36,22 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/products" className="text-gray-400 hover:text-white transition-colors">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
                   Contact
                 </Link>
               </li>
@@ -64,22 +63,22 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Categories</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/products?category=Drivers" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/products?category=Drivers" className="text-gray-400 hover:text-white transition-colors">
                   Drivers
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=Irons" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/products?category=Irons" className="text-gray-400 hover:text-white transition-colors">
                   Irons
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=Wedges" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/products?category=Wedges" className="text-gray-400 hover:text-white transition-colors">
                   Wedges
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=Putters" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/products?category=Putters" className="text-gray-400 hover:text-white transition-colors">
                   Putters
                 </Link>
               </li>
@@ -116,13 +115,13 @@ const Footer: React.FC = () => {
               © 2024 Golf Club Store. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/shipping" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="/shipping" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Shipping Info
               </Link>
             </div>
@@ -130,7 +129,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer; 
+export default Footer 

@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Star } from 'lucide-react';
+import Link from 'next/link'
+import { ArrowRight, Star } from 'lucide-react'
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-primary-50 to-golf-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -28,7 +27,7 @@ const Hero: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                to="/products"
+                href="/products"
                 className="btn-primary inline-flex items-center justify-center space-x-2 text-lg px-8 py-3"
               >
                 <span>Shop Now</span>
@@ -36,7 +35,7 @@ const Hero: React.FC = () => {
               </Link>
               
               <Link
-                to="/about"
+                href="/about"
                 className="btn-secondary inline-flex items-center justify-center text-lg px-8 py-3"
               >
                 Learn More
@@ -104,7 +103,7 @@ const Hero: React.FC = () => {
         </svg>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero; 
+export default Hero 

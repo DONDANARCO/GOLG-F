@@ -1,14 +1,13 @@
-import React from 'react';
-import { Product } from '../types';
-import ProductCard from './ProductCard';
+import { Product } from '@/types'
+import ProductCard from './ProductCard'
 
 interface ProductGridProps {
-  products: Product[];
-  title?: string;
-  subtitle?: string;
+  products: Product[]
+  title?: string
+  subtitle?: string
 }
 
-const ProductGrid: React.FC<ProductGridProps> = ({ products, title, subtitle }) => {
+const ProductGrid = ({ products, title, subtitle }: ProductGridProps) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {(title || subtitle) && (
@@ -40,7 +39,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title, subtitle }) 
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ProductGrid; 
+export default ProductGrid 

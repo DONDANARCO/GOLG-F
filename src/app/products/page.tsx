@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { Filter, SortAsc, SortDesc } from 'lucide-react'
 import ProductGrid from '@/components/ProductGrid'
 import { products, categories, brands } from '@/data/products'
 import { Product } from '@/types'
 
-export default function ProductsPage() {
+function ProductsPageContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products)
@@ -16,12 +16,12 @@ export default function ProductsPage() {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
 
   // Get filter values from URL params
-  const category = searchParams.get('category') || ''
-  const brand = searchParams.get('brand') || ''
-  const search = searchParams.get('search') || ''
-  const minPrice = searchParams.get('minPrice') || ''
-  const maxPrice = searchParams.get('maxPrice') || ''
-  const inStock = searchParams.get('inStock') === 'true'
+  const category = searchParams?.get('category') || ''
+  const brand = searchParams?.get('brand') || ''
+  const search = searchParams?.get('search') || ''
+  const minPrice = searchParams?.get('minPrice') || ''
+  const maxPrice = searchParams?.get('maxPrice') || ''
+  const inStock = searchParams?.get('inStock') === 'true'
 
   useEffect(() => {
     let filtered = [...products]
@@ -76,7 +76,7 @@ export default function ProductsPage() {
   }, [category, brand, search, minPrice, maxPrice, inStock, sortBy, sortOrder])
 
   const updateFilter = (key: string, value: string) => {
-    const newParams = new URLSearchParams(searchParams.toString())
+    const newParams = new URLSearchParams(searchParams?.toString() || '')
     if (value) {
       newParams.set(key, value)
     } else {
@@ -274,5 +274,13 @@ export default function ProductsPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductsPageContent />
+    </Suspense>
   )
 }

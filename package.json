@@ -1,7 +1,7 @@
 {
-  "name": "golf-club-store",
+  "name": "lets-golf-za",
   "version": "1.0.0",
-  "description": "Modern Golf Club E-commerce Store",
+  "description": "Lets Golf ZA - Premium Golf Equipment Marketplace",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -16,8 +16,8 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Elevate Your
-              <span className="text-primary-600 block">Golf Game</span>
+              Lets Golf ZA
+              <span className="text-primary-600 block">Elevate Your Game</span>
             </h1>
             
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">

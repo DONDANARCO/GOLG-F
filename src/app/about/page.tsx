@@ -8,7 +8,7 @@ export default function AboutPage() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">About Golf Club Store</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6">About Lets Golf ZA</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are passionate about golf and committed to providing the best equipment 
               to help you improve your game. Our team of experts is here to guide you 
@@ -25,7 +25,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-6">
-                At Golf Club Store, we believe that every golfer deserves access to premium equipment 
+                At Lets Golf ZA, we believe that every golfer deserves access to premium equipment 
                 that can help them reach their full potential. Whether you're a beginner looking to 
                 get started or a seasoned pro seeking that competitive edge, we're here to support 
                 your journey.

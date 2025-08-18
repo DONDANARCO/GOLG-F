@@ -180,7 +180,7 @@ export default function MarketplacePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Golf Club Marketplace</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Lets Golf ZA Marketplace</h1>
           <p className="text-gray-600">Find the perfect golf clubs from our platform and trusted sellers</p>
         </div>
 

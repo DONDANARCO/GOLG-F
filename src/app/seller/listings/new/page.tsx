@@ -110,7 +110,7 @@ export default function AddSellerListing() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Add New Listing</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Add New Listing to Lets Golf ZA</h1>
           <p className="text-gray-600">List your golf club for sale and start earning</p>
         </div>
 

@@ -31,7 +31,7 @@ export default function ContactPage() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">Contact Us</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6">Contact Lets Golf ZA</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Get in touch with our golf experts for personalized recommendations 
               and support. We're here to help you find the perfect equipment.
@@ -143,8 +143,8 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-gray-900 mb-1">Visit Our Store</h3>
                     <p className="text-gray-600">
                       123 Golf Street<br />
-                      Golf City, GC 12345<br />
-                      United States
+                      Johannesburg, Gauteng 2000<br />
+                      South Africa
                     </p>
                   </div>
                 </div>
@@ -156,8 +156,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
                     <p className="text-gray-600">
-                      Main: (555) 123-4567<br />
-                      Support: (555) 123-4568
+                      Main: +27 11 123 4567<br />
+                      Support: +27 11 123 4568
                     </p>
                   </div>
                 </div>
@@ -169,8 +169,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
                     <p className="text-gray-600">
-                      info@golfclubstore.com<br />
-                      support@golfclubstore.com
+                      info@letsgolfza.com<br />
+                      support@letsgolfza.com
                     </p>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Do you ship internationally?</h3>
                   <p className="text-gray-600">
-                    Currently, we ship to the United States and Canada. International shipping options 
+                    Currently, we ship throughout South Africa. International shipping options 
                     may be available for select items.
                   </p>
                 </div>
@@ -248,7 +248,7 @@ export default function ContactPage() {
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-600">Interactive map would be embedded here</p>
-                <p className="text-sm text-gray-500 mt-2">123 Golf Street, Golf City, GC 12345</p>
+                <p className="text-sm text-gray-500 mt-2">123 Golf Street, Johannesburg, Gauteng 2000</p>
               </div>
             </div>
           </div>

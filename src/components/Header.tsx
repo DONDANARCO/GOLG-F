@@ -20,7 +20,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">G</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">Golf Club Store</span>
+            <span className="text-xl font-bold text-gray-900">Lets Golf ZA</span>
           </Link>
 
           {/* Desktop Navigation */}

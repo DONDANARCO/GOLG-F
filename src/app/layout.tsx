@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Golf Club Store - Premium Golf Equipment',
+  title: 'Lets Golf ZA - Premium Golf Equipment',
   description: 'Find the perfect golf clubs and equipment for your game. Premium brands, expert advice, and competitive prices.',
 }
 

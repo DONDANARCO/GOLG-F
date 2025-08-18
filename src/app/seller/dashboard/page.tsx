@@ -62,7 +62,7 @@ export default function SellerDashboard() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Seller Dashboard</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Lets Golf ZA Seller Dashboard</h1>
             <p className="text-gray-600">Manage your golf club listings and track your earnings</p>
           </div>
           <Link href="/seller/listings/new" className="btn-primary inline-flex items-center space-x-2 mt-4 sm:mt-0">

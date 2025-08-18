@@ -121,7 +121,7 @@ export default function SellerRegistration() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Become a Seller</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Become a Seller on Lets Golf ZA</h1>
           <p className="text-gray-600">List your golf clubs and earn money with our 10% commission structure</p>
         </div>
 

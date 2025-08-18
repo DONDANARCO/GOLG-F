@@ -85,7 +85,7 @@ const sellerListings: SellerListing[] = [
   }
 ]
 
-export default function MarketplacePage() {
+function MarketplacePageContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const [filteredProducts, setFilteredProducts] = useState<(Product | SellerListing)[]>([])
@@ -377,11 +377,11 @@ export default function MarketplacePage() {
           {filteredProducts.map((product) => (
             <div key={product.id} className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
               <div className="relative">
-                <img
-                  src={'isSellerListing' in product && product.isSellerListing ? product.image : product.images[0]}
-                  alt={product.name}
-                  className="w-full h-48 object-cover"
-                />
+                                 <img
+                   src={'isSellerListing' in product && product.isSellerListing ? product.image : (product as Product).images[0]}
+                   alt={product.name}
+                   className="w-full h-48 object-cover"
+                 />
                 <div className="absolute top-2 left-2">
                   {getSourceIcon(product)}
                 </div>
@@ -394,13 +394,13 @@ export default function MarketplacePage() {
                     {getSourceLabel(product)}
                   </span>
                 </div>
-                {product.featured && (
-                  <div className="absolute bottom-2 left-2">
-                    <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                      Featured
-                    </span>
-                  </div>
-                )}
+                                 {'featured' in product && product.featured && (
+                   <div className="absolute bottom-2 left-2">
+                     <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                       Featured
+                     </span>
+                   </div>
+                 )}
               </div>
               
               <div className="p-4">
@@ -413,9 +413,9 @@ export default function MarketplacePage() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-1">
                     <span className="text-lg font-bold text-gray-900">R{product.price}</span>
-                    {'originalPrice' in product && product.originalPrice > product.price && (
-                      <span className="text-sm text-gray-500 line-through">R{product.originalPrice}</span>
-                    )}
+                                         {'originalPrice' in product && (product as any).originalPrice > product.price && (
+                       <span className="text-sm text-gray-500 line-through">R{(product as any).originalPrice}</span>
+                     )}
                   </div>
                   <div className="flex items-center space-x-1">
                     <span className="text-yellow-400">★</span>
@@ -453,7 +453,15 @@ export default function MarketplacePage() {
             </p>
           </div>
         )}
-      </div>
-    </div>
+             </div>
+     </div>
+   )
+ }
+
+export default function MarketplacePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MarketplacePageContent />
+    </Suspense>
   )
 }

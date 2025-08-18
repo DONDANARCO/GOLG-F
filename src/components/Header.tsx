@@ -31,11 +31,17 @@ const Header = () => {
             <Link href="/products" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               Products
             </Link>
+            <Link href="/marketplace" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
+              Marketplace
+            </Link>
             <Link href="/about" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               About
             </Link>
             <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">
               Contact
+            </Link>
+            <Link href="/seller/register" className="text-primary-600 hover:text-primary-700 font-medium transition-colors">
+              Become a Seller
             </Link>
           </nav>
 
@@ -91,6 +97,13 @@ const Header = () => {
                 Products
               </Link>
               <Link
+                href="/marketplace"
+                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Marketplace
+              </Link>
+              <Link
                 href="/about"
                 className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
                 onClick={() => setIsMenuOpen(false)}
@@ -103,6 +116,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
+              </Link>
+              <Link
+                href="/seller/register"
+                className="text-primary-600 hover:text-primary-700 font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Become a Seller
               </Link>
             </nav>
             

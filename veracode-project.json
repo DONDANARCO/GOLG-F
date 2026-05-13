@@ -1,0 +1,9 @@
+﻿{
+  "projectVersion": "1.0.0",
+  "uploadAndScan": {
+    "appName": "GOLG-F",
+    "fileFolderPath": [
+      ".veracode/build"
+    ]
+  }
+}
